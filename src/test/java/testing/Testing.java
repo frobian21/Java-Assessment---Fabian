@@ -1,6 +1,6 @@
 package testing;
 
-import main.Tasking;
+import main.AdventureGame;
 
 public class Testing {
 

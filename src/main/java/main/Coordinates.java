@@ -1,5 +1,6 @@
 package main;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 public class Coordinates {
@@ -34,11 +35,13 @@ public class Coordinates {
 	public boolean compareCoordinates(Coordinates ref) {
 		double distance = Math.sqrt(Math.pow(ref.getCoordinates()[0]-x,2) + Math.pow(ref.getCoordinates()[1]-y,2));
 		if(distance==0) {
-			System.out.println("You see a box sitting on the plain.   Its filled with treasure! You win! The end.");
 			return false;
 		}else {
 			System.out.print("The dial reads '");
-			System.out.print((float) distance);
+//			float distf = (float) distance*100;
+//			int dist = (int) distf;
+//			System.out.print((float)dist/100); //Conversion to 2 d.p. This could be improved with printf but need to chck syntax
+			System.out.print(new DecimalFormat("0.###").format(distance));
 			System.out.print("m'\n>");
 			return true;
 		}
